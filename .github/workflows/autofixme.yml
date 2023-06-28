@@ -1,10 +1,10 @@
 name: autofix linting errors
 on:
-  issue_comment:
-    types: [created, edited, deleted]
+  pull_request:
+  push:
+    branches: [develop]
 jobs:
   job01:
-    if: contains(github.event.comment.body, 'autofixme!')
     runs-on: [ubuntu-latest]
     steps:
       - uses: actions/setup-node@v3
