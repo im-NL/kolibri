@@ -5,10 +5,12 @@ on:
     branches:
     - develop
     - 'release-v**'
+    - 'im-NL-patch**'
   pull_request:
     branches:
     - develop
     - 'release-v**'
+    - 'im-NL-patch**'
 
 jobs:
   pre_job:
