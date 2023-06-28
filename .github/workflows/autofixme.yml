@@ -12,9 +12,8 @@ jobs:
         with:
           python-version: 3.x
       - uses: pre-commit/action@v3.0.0
-      - name: Use Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
-            node-version: '18.16.0'
+          node-version: '18.16.0'
       - uses: pre-commit-ci/lite-action@v1.0.1
         if: always()
