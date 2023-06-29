@@ -184,6 +184,8 @@ class DeviceChannelOrderView(APIView):
             raise ParseError(
                 "List of ids does not match the available channels on the server"
             )
-        queryset.update(order=Case(*(When(id=uuid, then=i + 1) for i, uuid in enumerate(ids))))
+        queryset.update(
+            order=Case(*(When(id=uuid, then=i + 1) for i, uuid in enumerate(ids)))
+        )
         ContentCacheKey.update_cache_key()
         return Response({})
